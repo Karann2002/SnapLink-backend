@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(cors({
-  origin: ["http://localhost:5173" ,"https://snaplink-backend-ttci.onrender.com"], // frontend URLs
+  origin: ["http://localhost:5173" ,"https://snap-link-frontend-pi.vercel.app"], // frontend URLs
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -51,7 +51,7 @@ app.get("/api", (req, res) => {
 
 // --- Socket.io setup
 const io = new Server(server, {
-  cors: { origin: ["http://localhost:5173"], methods: ["GET", "POST"] },
+  cors: { origin: ["http://localhost:5173","https://snap-link-frontend-pi.vercel.app"], methods: ["GET", "POST"] },
 });
 
 io.on("connection", (socket) => {
@@ -134,3 +134,4 @@ mongoose
 
 
   connectDB()
+
