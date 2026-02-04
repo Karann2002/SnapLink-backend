@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(cors({
-  origin: ["http://localhost:5173"], // frontend URLs
+  origin: ["http://localhost:5173" ,"https://snaplink-backend-ttci.onrender.com"], // frontend URLs
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -131,5 +131,6 @@ mongoose
     );
   })
   .catch((err) => console.log(err));
+
 
   connectDB()
